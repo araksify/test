@@ -1,0 +1,58 @@
+
+
+## Task 1. Exploratory Testing charter document
+
+|Charter                                                                    |Session Time   |Priority |
+|---------------------------------------------------------------------------|---------------|---------|
+|`Explore Adding expenses with quick category icons to discover usability`  |10-15 mins     | HIGH |
+|`Explore Adding records with built-in calculator to discover possible problems in flow`     |10-15 mins     | HIGH |
+|`Explore input Validations with malformed data to discover possible security problems`                                   |5-10 mins     | MODERATE|
+|`Explore access to Premium features with basic user account to discover business functionality failures`  						    |10-15 mins     | HIGH |
+|`Explore accessing to Premium features with premium user account to discover business functionality failures`|20-30 mins     | HIGH |
+|`Explore the transaction list with many inputs to discover usability of listing`|10-15 mins| HIGH |
+|`Explore search with existing and non existing queries to discover search functionality`|10-15 mins| HIGH|
+|`Explore making transfer with already created accounts to discover the changes on transactions view`|10-15 mins| HIGH |
+|`Explore date navigation with available filters to discover correct filter usability`|10-15 mins| MODERATE|
+|`Explore settings section to discover usability issues`|30-45 mins| MODERATE|
+|`Explore app with supported languages to discover localisation issues`| 2 hours | MODERATE |
+|`Explore core features in different devices to discover compatibility issues`| 1 hour | MODERATE |
+|`Explore backup with full memory device to discover interruptions with SD-Card` | 30 mins| LOW |
+
+## Issues found
+Issue #1: `Calculator on transaction screen overlays other fields`
+Platform: `Android`
+Device: `Pixel 2XL`, OS: `8.0.0`
+~~~~
+Steps:
+> Tap to add new transfer
+> Tap on amount field and enter amount
+> Observe screen
+ ~~~~
+Current result: `Calculator overlays adding notes, and adjusting cards sections.`
+Expected result: `As a user I would expect to collapse calculator and have access to editing other fields.`
+
+Issue #2: `Keyboard doesn't collapse after entering budget amount`
+Platform: `Android`
+Device: `Pixel 2XL`, OS: `8.0.0`
+~~~~
+Steps:
+> Open Settings section
+> Tap on Budget mode and enter amount
+> Tap on keyboard enter
+~~~~
+Current Result: `Keyboard remains open after amount is entered.`
+Expected Result: `Keyboard should disappear after amount is entered`
+
+Issue #3: `Budget amount is not saved after entering amount with native keyboard`
+Platform: `Android`
+Device: `Pixel 2XL`, OS: `8.0.0`
+Precondition: `budget amount is already exists`
+~~~~
+Steps:
+> Open Settings section
+> Tap on Budget mode and edit amount
+> Tap on enter on native keyboard
+> Observe budget amount
+~~~~
+Current Result: `Budget amount remains the same.`
+Expected Result: `Budget amount should be edited successfully.`
